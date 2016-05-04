@@ -30,9 +30,7 @@ class MailForm extends AbstractController {
 	}
 	
 	public function action_send() {
-		
 		$input = $this->getpost($input);
-			
 		$mail = Core::make('helper/mail');
 		if ($this->validate()) {
 			$adminUserInfo = UserInfo::getByID(USER_SUPER_ID);
