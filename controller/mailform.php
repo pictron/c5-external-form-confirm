@@ -83,7 +83,7 @@ class MailForm extends AbstractController {
 	        $errors['email'] = 'メールアドレスの形式を確認してください';
 	        $isvalid = false;
         }
-		if (!strlen(trim($this->post('name')))) {
+        if (!strlen(trim($this->post('name')))) {
 	        $errors['message'] = 'メッセージを入力してください';
 	        $isvalid = false;
 		}
@@ -94,8 +94,8 @@ class MailForm extends AbstractController {
     private function getpost($array) {
 	    $text = Core::make('helper/text');
 	    $array['name'] = $text->sanitize($this->post('name'));
-		$array['email'] = $text->sanitize($this->post('email'));
-		$array['message'] = $text->sanitize($this->post('message'));
+	    $array['email'] = $text->sanitize($this->post('email'));
+	    $array['message'] = $text->sanitize($this->post('message'));
 		return $array;
 	}
 }
