@@ -36,7 +36,7 @@ class MailForm extends AbstractController {
 		$mail = Core::make('helper/mail');
 		if ($this->validate()) {
 			$adminUserInfo = UserInfo::getByID(USER_SUPER_ID);
-            $formFormEmailAddress = $adminUserInfo->getUserEmail();
+			$formFormEmailAddress = $adminUserInfo->getUserEmail();
 			
 			$body = 'Name: ' . $input['name'] . "\r\n";
             $body .= 'Email: ' . $input['email'] . "\r\n\r\n";
@@ -52,7 +52,7 @@ class MailForm extends AbstractController {
             $c = Page::getCurrentPage();
 	        header('location: '.Core::make('helper/navigation')->getLinkToCollection($c, true).'/complete');
 	        exit;
-		}
+	    }
 	}
 	
 	public function action_complete() {
@@ -96,6 +96,6 @@ class MailForm extends AbstractController {
 	    $array['name'] = $text->sanitize($this->post('name'));
 	    $array['email'] = $text->sanitize($this->post('email'));
 	    $array['message'] = $text->sanitize($this->post('message'));
-		return $array;
+	    return $array;
 	}
 }
