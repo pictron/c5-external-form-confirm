@@ -1,1 +1,1 @@
-# c5-external-form-confirm
+# c5-external-form-confirmconcrete5の外部フォームで確認画面を出してメール送信するモックアップ## インストールディレクトリー/application/blocks/external_form/
