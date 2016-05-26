@@ -11,17 +11,17 @@ $crsftag = $token->generate($bid.'ask');
 <form method="post" action="<?php echo $view->action('confirm')?>">
   <div class="form-group">
   <?php echo $form->label('name', '名前'); ?>
-  <?php echo $form->text('name',$input['name'])?>
+  <?php echo $form->text('name',h($input['name']))?>
   <?php echo(isset($errors['name']) ? '<font color="#ff0000">'.$errors['name'].'</font>' : ''); ?>
   </div>
   <div class="form-group">
   <?php echo $form->label('email', 'メールアドレス'); ?>
-  <?php echo $form->text('email',$input['email'])?>
+  <?php echo $form->text('email',h($input['email']))?>
   <?php echo(isset($errors['email']) ? '<font color="#ff0000">'.$errors['email'].'</font>' : ''); ?>
   </div>
   <div class="form-group">
   <?php echo $form->label('message', 'メッセージ'); ?>
-  <?php echo $form->textarea('message',$input['message'])?>
+  <?php echo $form->textarea('message',h($input['message']))?>
   <?php echo(isset($errors['message']) ? '<font color="#ff0000">'.$errors['message'].'</font>' : ''); ?>
   </div>
   <?php echo $form->hidden('ccm_token',$crsftag);?>
@@ -33,15 +33,15 @@ $crsftag = $token->generate($bid.'ask');
 <table class="table">
   <tr>
     <td>名前</td>
-    <td><?php echo $input['name']; ?></td>
+    <td><?php echo h($input['name']); ?></td>
   </tr>
   <tr>
     <td>メールアドレス</td>
-    <td><?php echo $input['email']; ?></td>
+    <td><?php echo h($input['email']); ?></td>
   </tr>
   <tr>
     <td>メッセージ</td>
-    <td><?php echo $input['message']; ?></td>
+    <td><?php echo h($input['message']); ?></td>
   </tr>
 </table>
 <form method="post" id="form_confirm" action="<?php echo $view->action('send')?>">
